@@ -1,24 +1,51 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Imagecontainer from "./components/Imagecontainer";
+import Navmeal from "./components/Navbar/Navmeal";
+import Sectiona from "./components/Sectiona";
+import Sectionb from "./components/Sectionb";
+import Sectionc from "./components/Sectionc";
+import Sectiond from "./components/Sectiond";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main className="App">
+      <section className="">
+        <Navmeal />
+      </section>
+      <div className="bg-custom-color-1">
+        <section className="">
+          <Sectiona />
+        </section>
+        <section className="bg-custom-color-1">
+          <img
+            src="https://www.themealdb.com/images/separator.jpg"
+            className="w-full object-cover bg-white"
+            alt="SeparatorImage"
+          />
+        </section>
+
+        <section className="bg-custom-color-1">
+          <Sectionb />
+        </section>
+        <section>
+          <Imagecontainer />
+        </section>
+      </div>
+
+      <section className="bg-custom-color-1">
+        <img
+          src="https://www.themealdb.com/images/separator.jpg"
+          className="w-full object-cover bg-white"
+          alt="SeparatorImage"
+        />
+      </section>
+      <section className="bg-custom-color-1">
+        <Sectionc />
+      </section>
+      <section className="bg-custom-color-1">
+        <Sectiond />
+      </section>
+    </main>
   );
 }
 
