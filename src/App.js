@@ -5,6 +5,7 @@ import Sectiona from "./components/Sectiona";
 import Sectionb from "./components/Sectionb";
 import Sectionc from "./components/Sectionc";
 import Sectiond from "./components/Sectiond";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -44,6 +45,9 @@ function App() {
       </section>
       <section className="bg-custom-color-1">
         <Sectiond />
+      </section>
+      <section className="bg-custom-color-1">
+        <Footer />
       </section>
     </main>
   );
