@@ -1,6 +1,7 @@
 import React from "react";
 import Meallobo from "../../Image/Meallobo.png";
-import { SearchIcon } from "@heroicons/react/outline";
+// import { SearchIcon } from "@heroicons/react/outline";
+import { Link } from "react-router-dom";
 
 const Navmeal = () => {
   return (
@@ -56,52 +57,54 @@ const Navmeal = () => {
               </a>
             </li>
             <li>
+              <Link
+                to="/category/:categoryId"
+                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+              >
+                Favourate
+              </Link>
+            </li>
+            <li>
               <a
                 href="#"
                 className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
               >
-
-    <table className="w-350 mx-auto">
-      <thead>
-        <tr>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            <form
-              className="navbar-form"
-              action="/browse/search/"
-              autoComplete="off"
-            >
-              <div className="flex">
-                <input
-                  type="text"
-                  name="s"
-                  className=" border-2 h-8 w-20 hover:border-grey" // Add padding right to make space for icon
-                  autoComplete="off"
-                  placeholder="Search"
-                />
-                <div className="absolute inset-y-0 right-0 flex items-center mr-3 pointer-events-none">
-                  <SearchIcon className="h-5 w-5 text-gray-400 border-2 border-black" />{" "}
-                  {/* Adding search icon */}
-                </div>
-                <div className="input-group-btn">
-                  <button type="submit" className="btn btn-default">
-                    <span className="glyphicon glyphicon-search"></span>
-                  </button>
-                </div>
-              </div>
-            </form>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-
-
-
-
+                <table className="w-350 mx-auto">
+                  <thead>
+                    <tr>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <form
+                          className="navbar-form"
+                          action="/browse/search/"
+                          autoComplete="off"
+                        >
+                          <div className="flex">
+                            <input
+                              type="text"
+                              name="s"
+                              className=" border-2 h-8 w-20 hover:border-grey" 
+                              autoComplete="off"
+                              placeholder="Search"
+                            />
+                            <div className="absolute inset-y-0 right-0 flex items-center mr-3 pointer-events-none">
+                              {/* Adding search icon */}
+                            </div>
+                            <div className="input-group-btn">
+                              <button type="submit" className="btn btn-default">
+                                <span className="glyphicon glyphicon-search"></span>
+                              </button>
+                            </div>
+                          </div>
+                        </form>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               </a>
             </li>
           </ul>

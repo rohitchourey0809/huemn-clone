@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Sectiond = () => {
   let categories = [
@@ -35,7 +36,7 @@ const Sectiond = () => {
     },
   ];
   return (
-    <div>
+    <div className="bg-custom-color-1">
       <div className="py-4">
         <center>
           <b className="text-white">Random Ingredients</b>
@@ -48,17 +49,17 @@ const Sectiond = () => {
                   key={category.idCategory}
                   className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/4 p-2"
                 >
-                  <a href="/" className="block">
+                  <Link to={`category/${category.idCategory}`} className="block">
                     <img
+                      alt="dummyimage"
                       key={category.idCategory}
                       src={category.strCategoryThumb}
-                      alt="15-minute chicken & halloumi burgers"
                       className="w-60 h-60"
                     />
                     <span className="text-center  dark:text-yellow-700 hover:text-yellow-500 mr-20">
                       {category.strCategory}
                     </span>
-                  </a>
+                  </Link>
                 </div>
               ))}
             </div>
@@ -70,7 +71,7 @@ const Sectiond = () => {
             href="/meal/53085-15-minute-chicken-&amp;-halloumi-burgers-Recipe"
             className="block"
           >
-            <img
+            <img alt="dummyimage"
               src="https://www.themealdb.com/images/media/meals/vdwloy1713225718.jpg"
               alt="15-minute chicken & halloumi burgers"
               className="w-full h-auto"
@@ -82,7 +83,7 @@ const Sectiond = () => {
         </div>
         <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/4 p-2">
           <a href="/meal/53083-Lamb-Pilaf-(Plov)-Recipe" className="block">
-            <img
+            <img alt="dummyimage"
               src="https://www.themealdb.com/images/media/meals/kos9av1699014767.jpg"
               alt="Lamb Pilaf (Plov)"
               className="w-full h-auto"
@@ -224,67 +225,6 @@ const Sectiond = () => {
       </div> */}
       </div>
 
-      {/* <div className="center">
-        <h3 className="text-center text-white py-2 ">Random Ingredients</h3>
-        <div className="flex flex-wrap justify-center dark:text-yellow-700 font-bold">
-          <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/4 p-2">
-            <a href="https://www.themealdb.com/ingredient/319-Tuna">
-              <figure>
-                <img
-                  src="https://www.themealdb.com/images/ingredients/Tuna.png"
-                  className="w-full h-auto"
-                  alt="Tuna"
-                />
-                <figcaption className="text-center">Tuna</figcaption>
-              </figure>
-            </a>
-          </div>
-          <div className="w-48 m-2">
-            <a href="https://www.themealdb.com/ingredient/255-Puff-Pastry">
-              <figure>
-                <img
-                  src="https://www.themealdb.com/images/ingredients/Puff-Pastry.png"
-                  className="w-full"
-                  alt="Puff Pastry"
-                />
-                <figcaption className="text-center">Puff Pastry</figcaption>
-              </figure>
-            </a>
-          </div>
-          <div className="w-48 m-2">
-            <a href="https://www.themealdb.com/ingredient/477-Dried-Fruit">
-              <figure>
-                <img
-                  src="https://www.themealdb.com/images/ingredients/Dried Fruit.png"
-                  className="w-full"
-                  alt="Dried Fruit"
-                />
-                <figcaption className="text-center">Dried Fruit</figcaption>
-              </figure>
-            </a>
-          </div>
-          <div className="w-48 m-2">
-            <a href="https://www.themealdb.com/ingredient/600-Mulukhiyah">
-              <figure>
-                <img
-                  src="https://www.themealdb.com/images/ingredients/Mulukhiyah.png"
-                  className="w-full"
-                  alt="Mulukhiyah"
-                />
-                <figcaption className="text-center">Mulukhiyah</figcaption>
-              </figure>
-            </a>
-          </div>
-        </div>
-
-        <section className="bg-custom-color-1">
-          <img
-            src="https://www.themealdb.com/images/separator.jpg"
-            className="w-full object-cover bg-white"
-            alt="SeparatorImage"
-          />
-        </section>
-      </div> */}
       <section className="bg-custom-color-1">
         <img
           src="https://www.themealdb.com/images/separator.jpg"
@@ -296,162 +236,258 @@ const Sectiond = () => {
       <div className="flex justify-center flex-wrap max-w-screen-2xl p-4">
         <a href="https://www.themealdb.com/browse/area/us">
           {" "}
-          <img src="https://www.themealdb.com/images/icons/flags/big/64/us.png" />
+          <img
+            alt="dummyimage"
+            src="https://www.themealdb.com/images/icons/flags/big/64/us.png"
+          />
         </a>
 
         <a href="https://www.themealdb.com/browse/area/fr">
           {" "}
-          <img src="https://www.themealdb.com/images/icons/flags/big/64/fr.png" />
+          <img
+            alt="dummyimage"
+            src="https://www.themealdb.com/images/icons/flags/big/64/fr.png"
+          />
         </a>
 
         <a href="https://www.themealdb.com/browse/area/ca">
           {" "}
-          <img src="https://www.themealdb.com/images/icons/flags/big/64/ca.png" />
+          <img
+            alt="dummyimage"
+            src="https://www.themealdb.com/images/icons/flags/big/64/ca.png"
+          />
         </a>
 
         <a href="https://www.themealdb.com/browse/area/jm">
           {" "}
-          <img src="https://www.themealdb.com/images/icons/flags/big/64/jm.png" />
+          <img
+            alt="dummyimage"
+            src="https://www.themealdb.com/images/icons/flags/big/64/jm.png"
+          />
         </a>
 
         <a href="https://www.themealdb.com/browse/area/cn">
           {" "}
-          <img src="https://www.themealdb.com/images/icons/flags/big/64/cn.png" />
+          <img
+            alt="dummyimage"
+            src="https://www.themealdb.com/images/icons/flags/big/64/cn.png"
+          />
         </a>
 
         <a href="https://www.themealdb.com/browse/area/nl">
           {" "}
-          <img src="https://www.themealdb.com/images/icons/flags/big/64/nl.png" />
+          <img
+            alt="dummyimage"
+            src="https://www.themealdb.com/images/icons/flags/big/64/nl.png"
+          />
         </a>
 
         <a href="https://www.themealdb.com/browse/area/eg">
           {" "}
-          <img src="https://www.themealdb.com/images/icons/flags/big/64/eg.png" />
+          <img
+            alt="dummyimage"
+            src="https://www.themealdb.com/images/icons/flags/big/64/eg.png"
+          />
         </a>
 
         <a href="https://www.themealdb.com/browse/area/gr">
           {" "}
-          <img src="https://www.themealdb.com/images/icons/flags/big/64/gr.png" />
+          <img
+            alt="dummyimage"
+            src="https://www.themealdb.com/images/icons/flags/big/64/gr.png"
+          />
         </a>
 
         <a href="https://www.themealdb.com/browse/area/in">
           {" "}
-          <img src="https://www.themealdb.com/images/icons/flags/big/64/in.png" />
+          <img
+            alt="dummyimage"
+            src="https://www.themealdb.com/images/icons/flags/big/64/in.png"
+          />
         </a>
 
         <a href="https://www.themealdb.com/browse/area/ie">
           {" "}
-          <img src="https://www.themealdb.com/images/icons/flags/big/64/ie.png" />
+          <img
+            alt="dummyimage"
+            src="https://www.themealdb.com/images/icons/flags/big/64/ie.png"
+          />
         </a>
 
         <a href="https://www.themealdb.com/browse/area/it">
           {" "}
-          <img src="https://www.themealdb.com/images/icons/flags/big/64/it.png" />
+          <img
+            alt="dummyimage"
+            src="https://www.themealdb.com/images/icons/flags/big/64/it.png"
+          />
         </a>
 
         <a href="https://www.themealdb.com/browse/area/jp">
           {" "}
-          <img src="https://www.themealdb.com/images/icons/flags/big/64/jp.png" />
+          <img
+            alt="dummyimage"
+            src="https://www.themealdb.com/images/icons/flags/big/64/jp.png"
+          />
         </a>
 
         <a href="https://www.themealdb.com/browse/area/kn">
           {" "}
-          <img src="https://www.themealdb.com/images/icons/flags/big/64/kn.png" />
+          <img
+            alt="dummyimage"
+            src="https://www.themealdb.com/images/icons/flags/big/64/kn.png"
+          />
         </a>
 
         <a href="https://www.themealdb.com/browse/area/my">
           {" "}
-          <img src="https://www.themealdb.com/images/icons/flags/big/64/my.png" />
+          <img
+            alt="dummyimage"
+            src="https://www.themealdb.com/images/icons/flags/big/64/my.png"
+          />
         </a>
 
         <a href="https://www.themealdb.com/browse/area/mx">
           {" "}
-          <img src="https://www.themealdb.com/images/icons/flags/big/64/mx.png" />
+          <img
+            alt="dummyimage"
+            src="https://www.themealdb.com/images/icons/flags/big/64/mx.png"
+          />
         </a>
 
         <a href="https://www.themealdb.com/browse/area/ma">
           {" "}
-          <img src="https://www.themealdb.com/images/icons/flags/big/64/ma.png" />
+          <img
+            alt="dummyimage"
+            src="https://www.themealdb.com/images/icons/flags/big/64/ma.png"
+          />
         </a>
 
         <a href="https://www.themealdb.com/browse/area/hr">
           {" "}
-          <img src="https://www.themealdb.com/images/icons/flags/big/64/hr.png" />
+          <img
+            alt="dummyimage"
+            src="https://www.themealdb.com/images/icons/flags/big/64/hr.png"
+          />
         </a>
 
         <a href="https://www.themealdb.com/browse/area/no">
           {" "}
-          <img src="https://www.themealdb.com/images/icons/flags/big/64/no.png" />
+          <img
+            alt="dummyimage"
+            src="https://www.themealdb.com/images/icons/flags/big/64/no.png"
+          />
         </a>
 
         <a href="https://www.themealdb.com/browse/area/pt">
           {" "}
-          <img src="https://www.themealdb.com/images/icons/flags/big/64/pt.png" />
+          <img
+            alt="dummyimage"
+            src="https://www.themealdb.com/images/icons/flags/big/64/pt.png"
+          />
         </a>
 
         <a href="https://www.themealdb.com/browse/area/ru">
           {" "}
-          <img src="https://www.themealdb.com/images/icons/flags/big/64/ru.png" />
+          <img
+            alt="dummyimage"
+            src="https://www.themealdb.com/images/icons/flags/big/64/ru.png"
+          />
         </a>
 
         <a href="https://www.themealdb.com/browse/area/ar">
           {" "}
-          <img src="https://www.themealdb.com/images/icons/flags/big/64/ar.png" />
+          <img
+            alt="dummyimage"
+            src="https://www.themealdb.com/images/icons/flags/big/64/ar.png"
+          />
         </a>
 
         <a href="https://www.themealdb.com/browse/area/es">
           {" "}
-          <img src="https://www.themealdb.com/images/icons/flags/big/64/es.png" />
+          <img
+            alt="dummyimage"
+            src="https://www.themealdb.com/images/icons/flags/big/64/es.png"
+          />
         </a>
 
         <a href="https://www.themealdb.com/browse/area/sk">
           {" "}
-          <img src="https://www.themealdb.com/images/icons/flags/big/64/sk.png" />
+          <img
+            alt="dummyimage"
+            src="https://www.themealdb.com/images/icons/flags/big/64/sk.png"
+          />
         </a>
 
         <a href="https://www.themealdb.com/browse/area/th">
           {" "}
-          <img src="https://www.themealdb.com/images/icons/flags/big/64/th.png" />
+          <img
+            alt="dummyimage"
+            src="https://www.themealdb.com/images/icons/flags/big/64/th.png"
+          />
         </a>
 
         <a href="https://www.themealdb.com/browse/area/sa">
           {" "}
-          <img src="https://www.themealdb.com/images/icons/flags/big/64/sa.png" />
+          <img
+            alt="dummyimage"
+            src="https://www.themealdb.com/images/icons/flags/big/64/sa.png"
+          />
         </a>
 
         <a href="https://www.themealdb.com/browse/area/vn">
           {" "}
-          <img src="https://www.themealdb.com/images/icons/flags/big/64/vn.png" />
+          <img
+            alt="dummyimage"
+            src="https://www.themealdb.com/images/icons/flags/big/64/vn.png"
+          />
         </a>
 
         <a href="https://www.themealdb.com/browse/area/tr">
           {" "}
-          <img src="https://www.themealdb.com/images/icons/flags/big/64/tr.png" />
+          <img
+            alt="dummyimage"
+            src="https://www.themealdb.com/images/icons/flags/big/64/tr.png"
+          />
         </a>
 
         <a href="https://www.themealdb.com/browse/area/sy">
           {" "}
-          <img src="https://www.themealdb.com/images/icons/flags/big/64/sy.png" />
+          <img
+            alt="dummyimage"
+            src="https://www.themealdb.com/images/icons/flags/big/64/sy.png"
+          />
         </a>
 
         <a href="https://www.themealdb.com/browse/area/dz">
           {" "}
-          <img src="https://www.themealdb.com/images/icons/flags/big/64/dz.png" />
+          <img
+            alt="dummyimage"
+            src="https://www.themealdb.com/images/icons/flags/big/64/dz.png"
+          />
         </a>
 
         <a href="https://www.themealdb.com/browse/area/tn">
           {" "}
-          <img src="https://www.themealdb.com/images/icons/flags/big/64/tn.png" />
+          <img
+            alt="dummyimage"
+            src="https://www.themealdb.com/images/icons/flags/big/64/tn.png"
+          />
         </a>
 
         <a href="https://www.themealdb.com/browse/area/pl">
           {" "}
-          <img src="https://www.themealdb.com/images/icons/flags/big/64/pl.png" />
+          <img
+            alt="dummyimage"
+            src="https://www.themealdb.com/images/icons/flags/big/64/pl.png"
+          />
         </a>
 
         <a href="https://www.themealdb.com/browse/area/ph">
           {" "}
-          <img src="https://www.themealdb.com/images/icons/flags/big/64/ph.png" />
+          <img
+            alt="dummyimage"
+            src="https://www.themealdb.com/images/icons/flags/big/64/ph.png"
+          />
         </a>
       </div>
 
