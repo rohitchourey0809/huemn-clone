@@ -9,7 +9,7 @@ const Footer = () => {
             <div>© 2024 TheMealDB Proudly </div>
             <div>built in the UK</div>
           </div>
-          <div className="flex flex-col item-center justify-center border-4 py-6 px-6">
+          <div className="flex flex-col item-center justify-center  py-6 px-6">
             <div className="flex justify-center ">
               <center className="">Socials:</center>
               <a href="https://www.facebook.com/TheDataDB/">
