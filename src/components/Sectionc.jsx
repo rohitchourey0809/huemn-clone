@@ -17,7 +17,7 @@ const Sectionc = () => {
   }, [dispatch, status]);
 
   return (
-    <div className="py-4">
+    <div className="py-4 bg-custom-color-1">
       <center>
         <b className="text-white">Latest Meals</b>
       </center>
@@ -55,6 +55,13 @@ const Sectionc = () => {
           </ul>
         )}
       </div>
+      <section className="bg-custom-color-1">
+        <img
+          src="https://www.themealdb.com/images/separator.jpg"
+          className="w-full object-cover bg-white"
+          alt="SeparatorImage"
+        />
+      </section>
     </div>
   );
 };

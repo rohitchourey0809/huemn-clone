@@ -13,59 +13,29 @@ function App() {
   return (
     <BrowserRouter>
       <main className="App">
-        <section className="">
-          <Navmeal />
-        </section>
+        <Navmeal />
         <div>
           <Routes>
             <Route path="/category/:categoryId" element={<CategoryDetails />} />
           </Routes>
         </div>
         <div className="bg-custom-color-1">
-          <section className="">
-            <Routes>
-              <Route path="/" element={<Sectiona />} />
-            </Routes>
-          </section>
-          <section className="bg-custom-color-1">
-            <img
-              src="https://www.themealdb.com/images/separator.jpg"
-              className="w-full object-cover bg-white"
-              alt="SeparatorImage"
-            />
-          </section>
+          <Routes>
+            <Route path="/" element={<Sectiona />} />
+          </Routes>
 
-          <section className="bg-custom-color-1">
-            <Routes>
-              <Route path="/" element={<Sectionb />} />
-            </Routes>
-          </section>
-          <section>
-            <Routes>
-              <Route path="/" element={<Imagecontainer />} />
-            </Routes>
-          </section>
+          <Routes>
+            <Route path="/" element={<Sectionb />} />
+          </Routes>
+          <Routes>
+            <Route path="/" element={<Imagecontainer />} />
+          </Routes>
         </div>
 
-        <section className="bg-custom-color-1">
-          <img
-            src="https://www.themealdb.com/images/separator.jpg"
-            className="w-full object-cover bg-white"
-            alt="SeparatorImage"
-          />
-        </section>
-        <section className="bg-custom-color-1">
-          <Routes>
-            <Route path="/" element={<Sectionc />} />
-          </Routes>
-        </section>
-        <section className="bg-custom-color-1">
-          <img
-            src="https://www.themealdb.com/images/separator.jpg"
-            className="w-full object-cover bg-white"
-            alt="SeparatorImage"
-          />
-        </section>
+        <Routes>
+          <Route path="/" element={<Sectionc />} />
+        </Routes>
+
         <Routes>
           <Route path="/" element={<Sectiond />} />
         </Routes>

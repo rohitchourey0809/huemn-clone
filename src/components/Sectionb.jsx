@@ -3,7 +3,7 @@ import { SearchIcon } from "@heroicons/react/outline"; // Importing the search i
 
 const Sectionb = () => {
   return (
-    <table className="w-350 mx-auto py-2 p-2">
+    <table className="w-350 mx-auto py-2 p-2 bg-custom-color-1">
       <thead>
         <tr>
           <th></th>
