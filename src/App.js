@@ -44,6 +44,13 @@ function App() {
         <Sectionc />
       </section>
       <section className="bg-custom-color-1">
+        <img
+          src="https://www.themealdb.com/images/separator.jpg"
+          className="w-full object-cover bg-white"
+          alt="SeparatorImage"
+        />
+      </section>
+      <section className="bg-custom-color-1">
         <Sectiond />
       </section>
       <section className="bg-custom-color-1">

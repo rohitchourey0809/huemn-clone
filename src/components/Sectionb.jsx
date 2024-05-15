@@ -3,7 +3,7 @@ import { SearchIcon } from "@heroicons/react/outline"; // Importing the search i
 
 const Sectionb = () => {
   return (
-    <table className="w-350 mx-auto">
+    <table className="w-350 mx-auto py-2 p-2">
       <thead>
         <tr>
           <th></th>
@@ -21,7 +21,7 @@ const Sectionb = () => {
                 <input
                   type="text"
                   name="s"
-                  className="form-control pr-10" // Add padding right to make space for icon
+                  className="form-control pr-10 border-2 rounded-lg hover:border-grey" // Add padding right to make space for icon
                   autoComplete="off"
                   placeholder="Search for a Meal..."
                 />

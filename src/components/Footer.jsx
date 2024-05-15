@@ -47,7 +47,7 @@ const Footer = () => {
           <div className="right">
             <ul className="flex gap-8 p-2">
               <li>
-                <a href="/about.php">About</a>
+                <a href="https://www.themealdb.com/about.php">About</a>
               </li>
               <li>
                 <a href="/faq.php">Faq</a>
