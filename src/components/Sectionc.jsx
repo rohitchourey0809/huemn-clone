@@ -1,10 +1,12 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchCategories } from "../store/categoriesSlice";
+import { addToFavorites, fetchCategories } from "../store/categoriesSlice";
 
 import { Link } from "react-router-dom";
 
 const Sectionc = () => {
+  // State to store favorite categories
+  const [favorites, setFavorites] = useState([]);
   const dispatch = useDispatch();
   const { categories, status, error } = useSelector(
     (state) => state.categories
@@ -15,6 +17,13 @@ const Sectionc = () => {
       dispatch(fetchCategories());
     }
   }, [dispatch, status]);
+
+  // Function to handle adding to favorites
+  // Function to handle adding to favorites
+  const handleAddToFavorites = (category) => {
+    dispatch(addToFavorites(category));
+    alert("Item added favourate successfully");
+  };
 
   return (
     <div className="py-4 bg-custom-color-1">
@@ -33,21 +42,33 @@ const Sectionc = () => {
                   className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/4 p-2"
                 >
                   {category && ( // Add a conditional check for category
-                    <Link
-                      to={`/category/${category.idCategory}`}
-                      className="block"
-                      categoryId={category.idCategory}
-                    >
-                      <img
-                        key={category.idCategory}
-                        src={category.strCategoryThumb}
-                        alt={category.strCategory}
-                        className="w-auto h-auto object-cover"
-                      />
-                      <span className="block text-center mt-2 dark:text-yellow-700 hover:text-yellow-500">
-                        {category.strCategory}
-                      </span>
-                    </Link>
+                    <div>
+                      <Link
+                        to={`/category/${category.idCategory}`}
+                        className="block"
+                        categoryId={category.idCategory}
+                      >
+                        <img
+                          key={category.idCategory}
+                          src={category.strCategoryThumb}
+                          alt={category.strCategory}
+                          className="w-auto h-auto object-cover"
+                        />
+                        <span className="block text-center mt-2 dark:text-yellow-700 hover:text-yellow-500">
+                          {category.strCategory}
+                        </span>
+                      </Link>
+                      <div>
+                        {" "}
+                        <button
+                          type="button"
+                          class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                          onClick={() => handleAddToFavorites(category)}
+                        >
+                          Add to Favorites
+                        </button>
+                      </div>
+                    </div>
                   )}
                 </div>
               ))}

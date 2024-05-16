@@ -8,6 +8,7 @@ import Sectiond from "./components/Sectiond";
 import Footer from "./components/Footer";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import CategoryDetails from "./components/CategoryDetails";
+import FavoritesComponent from "./components/Favourate";
 
 function App() {
   return (
@@ -38,6 +39,10 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Sectiond />} />
+        </Routes>
+
+        <Routes>
+          <Route path="/favorites" element={<FavoritesComponent />} />
         </Routes>
         <Footer />
       </main>
