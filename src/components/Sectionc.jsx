@@ -5,8 +5,6 @@ import { addToFavorites, fetchCategories } from "../store/categoriesSlice";
 import { Link } from "react-router-dom";
 
 const Sectionc = () => {
-  // State to store favorite categories
-  const [favorites, setFavorites] = useState([]);
   const dispatch = useDispatch();
   const { categories, status, error } = useSelector(
     (state) => state.categories
@@ -18,8 +16,7 @@ const Sectionc = () => {
     }
   }, [dispatch, status]);
 
-  // Function to handle adding to favorites
-  // Function to handle adding to favorites
+
   const handleAddToFavorites = (category) => {
     dispatch(addToFavorites(category));
     alert("Item added favourate successfully");
