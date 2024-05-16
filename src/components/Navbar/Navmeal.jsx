@@ -8,10 +8,10 @@ const Navmeal = () => {
     <nav className="border-gray-200 bg-brown">
       <div className="max-w-screen-xl flex items-center justify-between mx-auto p-4">
         <a
-          href="https://flowbite.com/"
+          href="https://www.themealdb.com/"
           className="flex items-center space-x-3 rtl:space-x-reverse"
         >
-          <img src={Meallobo} className="h-8" alt="Flowbite Logo" />
+          <img src={Meallobo} className="h-8" alt="Meal Logo" />
         </a>
         <button
           data-collapse-toggle="navbar-default"
@@ -87,7 +87,7 @@ const Navmeal = () => {
                             <input
                               type="text"
                               name="s"
-                              className=" border-2 h-8 w-20 hover:border-grey" 
+                              className=" border-2 h-8 w-20 hover:border-grey"
                               autoComplete="off"
                               placeholder="Search"
                             />
