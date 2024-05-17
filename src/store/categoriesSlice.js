@@ -1,7 +1,6 @@
 import { createSlice, createAsyncThunk, createAction } from "@reduxjs/toolkit";
 import axios from "axios";
 
-// Action to add favorite category
 export const addFavorite = createAction("categories/addFavorite");
 export const deleteFromFavorites = createAction(
   "categories/deleteFromFavorites"
@@ -20,33 +19,39 @@ export const fetchCategories = createAsyncThunk(
 export const addToFavorites = createAsyncThunk(
   "categories/addToFavorites",
   async (category, { dispatch }) => {
-    // Perform any necessary logic here
-    // Add favorite to local storage
     const favoritesFromStorage =
       JSON.parse(localStorage.getItem("favorites")) || [];
     const updatedFavorites = [...favoritesFromStorage, category];
     localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
-
-    // Dispatch addFavorite action with the category data
     dispatch(addFavorite(category));
-
     return category;
   }
 );
 
+export const removeFromFavoritesThunk = createAsyncThunk(
+  "categories/removeFromFavoritesThunk",
+  async (categoryId, { dispatch }) => {
+    const favoritesFromStorage =
+      JSON.parse(localStorage.getItem("favorites")) || [];
+    const updatedFavorites = favoritesFromStorage.filter(
+      (category) => category.idCategory !== categoryId
+    );
+    localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
+    return categoryId;
+  }
+);
 
 const categoriesSlice = createSlice({
   name: "categories",
   initialState: {
     categories: [],
-
     status: "idle",
     error: null,
-    favorites: JSON.parse(localStorage.getItem("favorites")) || [],
+    favorites: [],
   },
   reducers: {
     addFavorite: (state, action) => {
-      state.favorites.push(action.payload); // Update favorites array
+      state.favorites.push(action.payload);
     },
     deleteFromFavorites: (state, action) => {
       state.favorites = state.favorites.filter(
