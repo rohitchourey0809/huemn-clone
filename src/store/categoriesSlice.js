@@ -2,7 +2,10 @@ import { createSlice, createAsyncThunk, createAction } from "@reduxjs/toolkit";
 import axios from "axios";
 
 // Action to add favorite category
-export const addFavorite = createAction("categories/addFavorite")
+export const addFavorite = createAction("categories/addFavorite");
+export const deleteFromFavorites = createAction(
+  "categories/deleteFromFavorites"
+);
 
 export const fetchCategories = createAsyncThunk(
   "categories/fetchCategories",
@@ -31,10 +34,12 @@ export const addToFavorites = createAsyncThunk(
   }
 );
 
+
 const categoriesSlice = createSlice({
   name: "categories",
   initialState: {
     categories: [],
+
     status: "idle",
     error: null,
     favorites: JSON.parse(localStorage.getItem("favorites")) || [],
@@ -42,6 +47,11 @@ const categoriesSlice = createSlice({
   reducers: {
     addFavorite: (state, action) => {
       state.favorites.push(action.payload); // Update favorites array
+    },
+    deleteFromFavorites: (state, action) => {
+      state.favorites = state.favorites.filter(
+        (category) => category.idCategory !== action.payload
+      );
     },
   },
   extraReducers: (builder) => {

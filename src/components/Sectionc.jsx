@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addToFavorites, fetchCategories } from "../store/categoriesSlice";
 
@@ -15,7 +15,6 @@ const Sectionc = () => {
       dispatch(fetchCategories());
     }
   }, [dispatch, status]);
-
 
   const handleAddToFavorites = (category) => {
     dispatch(addToFavorites(category));
