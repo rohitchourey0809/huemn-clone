@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteFromFavorites } from "../store/categoriesSlice";
 import DraggableRecipe from "./DraggableRecipe";
@@ -7,6 +7,10 @@ const FavoritesComponent = () => {
   const dispatch = useDispatch();
   const favorites = useSelector((state) => state.categories.favorites);
   const [recipes, setRecipes] = useState(favorites);
+
+   useEffect(() => {
+     setRecipes(favorites);
+   }, [favorites]);
 
   const handleDelete = (categoryId) => {
     dispatch(deleteFromFavorites(categoryId));

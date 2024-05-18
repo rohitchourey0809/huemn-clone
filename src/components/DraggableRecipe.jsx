@@ -8,6 +8,9 @@ const DraggableRecipe = ({ category, index, moveRecipe, handleDelete }) => {
     accept: "RECIPE",
     hover(item) {
       if (item.index !== index) {
+         console.log(
+           `Hovering over index: ${index}, dragging item index: ${item.index}`
+         );
         moveRecipe(item.index, index);
         item.index = index;
       }
@@ -43,10 +46,10 @@ const DraggableRecipe = ({ category, index, moveRecipe, handleDelete }) => {
               alt=""
             />
           </center>
-          <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 transition duration-500 hover:text-green-500">
+          <h5 className="mb-2 text-2xl font-bold tracking-tight text-cyan-600 transition duration-500 hover:text-green-500">
             {category.strCategory}
           </h5>
-          <p className="mb-3 font-normal text-gray-700 dark:text-gray-400 transition duration-500 hover:text-gray-900">
+          <p className="mb-3 font-normal text-cyan-600 dark:text-gray-400 transition duration-500 hover:text-blue-900 hover:font-mono hover:font-semibold">
             {category.strCategoryDescription}
           </p>
         </div>
