@@ -34,11 +34,8 @@ const DraggableRecipe = ({ category, index, moveRecipe, handleDelete }) => {
         isDragging ? "opacity-50" : "opacity-100"
       }`}
     >
-      <a
-        href="/"
-        className="flex flex-col justify-evenly items-center border-gray-500 rounded-lg shadow md:flex-row md:max-w-xl dark:border-gray-700 dark:bg-custom-color-1 bg-custom-color-1 transition duration-500 hover:shadow-lg"
-      >
-        <div className="flex flex-col justify-between p-4 leading-normal">
+      <center>
+        <div className="flex flex-col justify-between p-4 leading-normal  max-w-3xl text-wrap">
           <center>
             <img
               className="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg transition duration-500 hover:opacity-90"
@@ -53,14 +50,14 @@ const DraggableRecipe = ({ category, index, moveRecipe, handleDelete }) => {
             {category.strCategoryDescription}
           </p>
         </div>
-      </a>
-      <center>
-        <button
-          onClick={() => handleDelete(category.idCategory)}
-          className="mt-2 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded transition duration-500"
-        >
-          Delete
-        </button>
+        <center>
+          <button
+            onClick={() => handleDelete(category.idCategory)}
+            className="mt-2 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded transition duration-500"
+          >
+            Delete
+          </button>
+        </center>
       </center>
     </div>
   );
