@@ -9,6 +9,8 @@ import Footer from "./components/Footer";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import CategoryDetails from "./components/CategoryDetails";
 import FavoritesComponent from "./components/Favourate";
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
 
 function App() {
   return (
@@ -40,10 +42,12 @@ function App() {
         <Routes>
           <Route path="/" element={<Sectiond />} />
         </Routes>
+        <DndProvider backend={HTML5Backend}>
+          <Routes>
+            <Route path="/favorites" element={<FavoritesComponent />} />
+          </Routes>
+        </DndProvider>
 
-        <Routes>
-          <Route path="/favorites" element={<FavoritesComponent />} />
-        </Routes>
         <Footer />
       </main>
     </BrowserRouter>
